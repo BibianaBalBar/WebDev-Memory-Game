@@ -2,6 +2,8 @@ const cards = document.querySelectorAll(".memoryCard");
 let isFlipped = false;
 let firstCard, secondCard;
 let lock = false;
+let winGame = document.querySelector(".win");
+let counter = 0;
 
 cards.forEach(card => card.addEventListener("click", flip));
 
@@ -25,7 +27,13 @@ function check() {
 
 function success() {
     firstCard.removeEventListener("click", flip);
-    secondCard.removeEventListener("click", flip);
+    secondCard.removeEventListener("click", flip); 
+    counter++;  
+    if (counter === 8){
+        console.log('end');
+        winGame.classList.remove("display-none");
+    } 
+    console.log(counter);
     reset();
 }
 
@@ -40,7 +48,7 @@ function fail() {
 
 function reset() {
     [isFlipped, lock] = [false, false];
-    [firstCard, secondCard] = [null, null];
+    [firstCard, secondCard] = [null, null];    
 }
 
 (function suffle() {
@@ -50,3 +58,21 @@ function reset() {
     });
 })();
 
+
+winGame.addEventListener("click", () => {      
+    cards.forEach(card => {
+        let position = Math.floor(Math.random() * 16);
+        card.classList.toggle('flip');
+        card.style.order = position;
+        winGame.classList.add("display-none");
+        counter = 0;
+        cards.forEach(card => card.addEventListener("click", flip));
+    });        
+})
+
+
+
+
+
+
+console.log(counter);

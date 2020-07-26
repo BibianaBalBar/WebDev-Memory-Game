@@ -14,7 +14,9 @@ body {
 .gameContainer {
     width: 800px;
     height: 800px;
-    margin: auto auto;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
@@ -57,6 +59,32 @@ body {
 
 .front {
     transform: rotateY(180deg);
+}
+
+.containerWin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);    
+}
+
+.win button{    
+    padding: 3rem;
+    background: rgba(79, 93, 115, 0.92);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.display-none{
+    display: none;
+}
+
+.win button span {
+    font-size: 1.5rem;
 }
 
 @keyframes opening {
