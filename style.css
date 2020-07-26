@@ -8,11 +8,12 @@ body {
     min-height: 100vh;
     background-color: #4f5d73;
     display: flex;
+    animation: opening 1.8s ease-in-out;   
 }
 
 .gameContainer {
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -27,6 +28,7 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.3s;
     cursor: pointer;
+    animation: rotate 3s ease-in-out alternate;
 }
 
 .memoryCard img {
@@ -54,6 +56,43 @@ body {
     backface-visibility: hidden;
 }
 
+.back {
+    animation: rotateBall 2s ease-in;
+}
+
 .front {
     transform: rotateY(180deg);
+}
+
+@keyframes opening {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    33% {
+        transform: rotateZ(-8deg);
+    }
+    66% {
+        transform: rotateZ(8deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes rotateBall {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(180deg);
+    }
 }
