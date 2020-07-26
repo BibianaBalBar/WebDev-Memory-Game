@@ -14,7 +14,7 @@ body {
 .gameContainer {
     width: 800px;
     height: 800px;
-    margin: auto;
+    margin: auto auto;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
@@ -29,11 +29,6 @@ body {
     transition: transform 0.3s;
     cursor: pointer;
     animation: rotate 3s ease-in-out alternate;
-}
-
-.memoryCard img {
-    max-width: 100%;
-    max-height: 100%;
 }
 
 .memoryCard:active {
@@ -94,5 +89,26 @@ body {
     }
     to {
         transform: rotateZ(180deg);
+    }
+}
+
+/* Medias */
+@media screen and (max-width: 580px) {
+    .gameContainer {
+        width: 319px;
+        height: 319px;        
+    }    
+}    
+
+@media screen and (max-width: 728px) {
+    .gameContainer {
+        width: 400px;
+        height: 400px;
+        margin: 2rem auto;
+    }
+
+    .memoryCard {
+        width: 47%;
+        height: 47%;        
     }
 }
