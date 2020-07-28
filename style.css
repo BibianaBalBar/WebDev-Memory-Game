@@ -77,6 +77,7 @@ body {
     cursor: pointer;
     border: none;
     border-radius: 10px;
+    animation: opening 1.2s ease-in-out; 
 }
 
 .display-none{

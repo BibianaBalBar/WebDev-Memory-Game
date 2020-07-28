@@ -30,10 +30,8 @@ function success() {
     secondCard.removeEventListener("click", flip); 
     counter++;  
     if (counter === 8){
-        console.log('end');
         winGame.classList.remove("display-none");
-    } 
-    console.log(counter);
+    }     
     reset();
 }
 
@@ -58,7 +56,6 @@ function reset() {
     });
 })();
 
-
 winGame.addEventListener("click", () => {      
     cards.forEach(card => {
         let position = Math.floor(Math.random() * 16);
@@ -69,10 +66,3 @@ winGame.addEventListener("click", () => {
         cards.forEach(card => card.addEventListener("click", flip));
     });        
 })
-
-
-
-
-
-
-console.log(counter);
